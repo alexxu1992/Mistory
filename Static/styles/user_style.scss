@@ -1,0 +1,23 @@
+$wireframe_border:#e6e6e6;
+#user_feed_table{
+  position: absolute;
+  width: 60%;
+  height: 70%;
+  border: 1px solid $wireframe_border;
+  border-width: 1px 0px 1px 0px;
+  top:15%;
+  left:5%;
+}
+
+#feed_table_selector{
+  position: absolute;
+  width: 20%;
+  height:30%;
+  // border: 1px solid $wireframe_border;
+  top: 15%;
+  left: 70%;
+
+  input{
+    margin: 10px 10px 10px 10px;
+  }
+}

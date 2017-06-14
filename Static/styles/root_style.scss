@@ -1,0 +1,217 @@
+@import './main_style.scss';
+@import './topic_style.scss';
+@import './story_style.scss';
+@import './user_style.scss';
+
+$top_bar_height: 11%;
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+#top_bar{
+  position: fixed;
+  //position: absolute;
+  width: 100%;
+  height:60px;
+  //border:0.5px solid $wireframe_border;
+  //background-color: #ffffff;
+  //background-color:white;
+  //background: transparent;
+  opacity: 0.9;
+  top:0px;
+  left:0px;
+  z-index: 50;
+  &.main_page{
+    background-color: black;
+  }
+  &.other_page{
+    background-color: white;
+  }
+  // transition: all 0.5s ease-in;
+
+  // #home_back{
+  //   position: absolute;
+  //   //display: block;
+  //   font-size: 30px;
+  //   //color:#333333;
+  //   color:white;
+  //   top:50%;
+  //   left:18.5%;
+  //   z-index: 70;
+  //   transform: translateY(-50%);
+  //   // span{
+  //   //   position: relative;
+  //   //   font-size: 16px;
+  //   //   font-family: 'Noto Sans', sans-serif;
+  //   //   font-style: italic;
+  //   //   top:30px;
+  //   //   left:-98px;
+  //   //   display: none;
+  //   // }
+  //   &:hover{
+  //     cursor: pointer;
+  //   }
+  // }
+
+  #search_bar{
+    position: absolute;
+    //display: inline;
+    width:15%;
+    height:30px;
+    //min-height: 30px;
+    border:0.5px solid #e6e6e6;
+    border-radius: 6px;
+    left:72%;
+    top:50%;
+    //margin-bottom:30px;
+    transform: translateY(-50%);
+    &.appear{
+      display: block;
+    }
+    &.disappear{
+      display: none;
+    }
+  }
+
+  #selfie_entrance{
+    position: absolute;
+    width:40px;
+    height:40px;
+    border: 1px solid $wireframe_border;
+    border-radius: 50%;
+    left:90%;
+    top:50%;
+    transform: translateY(-50%);
+    //margin-bottom:30px;
+    z-index: 100;
+    img{
+      width:40px;
+      height:40px;
+      border-radius: 50%;
+      z-index: 50;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+}
+
+#home_back{
+  position: absolute;
+  //display: block;
+  font-size: 30px;
+  //color:#333333;
+  //color:white;
+  top:50%;
+  left:19%;
+  z-index: 70;
+  transform: translateY(-50%);
+  &:hover{
+    cursor: pointer;
+  }
+  &.main_page{
+    color:white;
+  }
+  &.other_page{
+    color:black;
+  }
+}
+
+#onBoard_root{
+  position: fixed;
+  background: white;
+  border: 1px solid $wireframe_border;
+  width: 400px;
+  height:500px;
+  top:12%;
+  left:50%;
+  transform: translateX(-50%);
+  z-index: 150;
+  &.disappear{
+    display: none;
+  };
+  //here is the Cancel_Button
+  span{
+    position: absolute;
+    top:2%;
+    left:3%;
+    font-size: 1.5em;
+    opacity:0.5;
+  };
+  span:hover{
+    cursor: pointer;
+  };
+
+  @mixin onBoard_button($border-color){
+    position: absolute;
+    font-size:20px;
+    top: 12%;
+    width: 16%;
+    text-align: center;
+    &.unselected{
+      opacity: 0.2
+    }
+    &.selected{
+      opacity: 1;
+      border-bottom: 1px solid $border-color;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  #signIn_option{
+    @include onBoard_button($wireframe_border);
+    left:26%;
+  }
+  #signUp_option{
+    @include onBoard_button($wireframe_border);
+    left:57%;
+  }
+
+  @mixin input_type() {
+    position: relative;
+    width:100%;
+    height:15%;
+    border-width: 0px 0px 1px 0px;
+    border-bottom: 1px solid $wireframe_border;
+    font-size: 15px;
+  }
+  #onBoard_signin_section{
+    position: absolute;
+    top:25%;
+    left:0%;
+    // border: 1px solid $wireframe_border;
+    height:40%;
+    width: 100%;
+    #signin_account{
+      @include input_type();
+      top:20%;
+
+    }
+    #signin_password{
+      @include input_type();
+      top:40%;
+    }
+  }
+
+  #onBoard_join{
+    position: absolute;
+    width: 60%;
+    height:8%;
+    top: 80%;
+    left:20%;
+  }
+
+}
+
+.spinner{
+  position: relative;
+  left:50%;
+  transition: translateX(-50%);
+  &.appear{
+    display: block;
+  }
+  &.disappear{
+    display: none;
+  }
+}
